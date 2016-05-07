@@ -19,6 +19,7 @@
 
 @implementation CatAPIController
 
+#pragma  mark - Public Methods
 
 - (void)getCatImages
 {
@@ -48,7 +49,7 @@
     [downloadDataTask resume];
 }
 
-#pragma mark - XML Parsing Methds
+#pragma mark - XML Parser Delegate Methds
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
@@ -71,6 +72,7 @@
     }
 }
 
+#pragma mark - Private Methods
 - (void)downloadImages
 {
     
@@ -87,8 +89,9 @@
                     UIImage *image = [[UIImage alloc] initWithData:data];
                     
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        
-                        [self.delegate didReceiveImage:image];
+                        if (image) {
+                            [self.delegate didReceiveImage:image];
+                        }
                         
                     });
                 }

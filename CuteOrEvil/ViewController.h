@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CatAPIController.h"
+#import <MDCSwipeToChoose/MDCSwipeToChoose.h>
+#import "MDCSwipeToChooseView.h"
 
-@interface ViewController : UIViewController <ImageFeedDelegate>
+
+@interface ViewController : UIViewController <ImageFeedDelegate, MDCSwipeToChooseDelegate>
 
 - (void)didReceiveImage:(UIImage *)image;
 

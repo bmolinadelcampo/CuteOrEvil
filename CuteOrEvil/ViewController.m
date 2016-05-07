@@ -8,16 +8,16 @@
 
 #import "ViewController.h"
 
+
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIView *containerSwipableView;
 
 @property (strong, nonatomic) CatAPIController *apiController;
 @property (strong, readwrite) NSMutableArray *imageList;
-
-- (IBAction)showNextPicture:(id)sender;
-- (void)changeImage;
-
+@property (strong, nonatomic) UIImage *currentImage;
+@property (strong, nonatomic) NSNumber *cuteCount;
+@property (strong, nonatomic) NSNumber *evilCount;
 
 @end
 
@@ -28,18 +28,19 @@
     
     self.apiController = [CatAPIController new];
     self.apiController.delegate = self;
-    [self styleImageView:self.imageView];
+    
+//    [self styleImageView:self.swipableView.imageView];
     [self.apiController getCatImages];
 }
 
 
-- (IBAction)showNextPicture:(id)sender {
-    
-    if (self.imageList.count != 0) {
-        self.imageView.image = self.imageList.firstObject;
-        [self.imageList removeObjectAtIndex:0];
-    }
-}
+//- (void)showNextPicture:(id)sender {
+//    
+//    if (self.imageList.count != 0) {
+//        self.swipableView.imageView.image = self.imageList.firstObject;
+//        [self.imageList removeObjectAtIndex:0];
+//    }
+//}
 
 - (void)didReceiveImage:(UIImage *)image
 {
@@ -49,9 +50,9 @@
     
     [self.imageList addObject:image];
     
-    if (!self.imageView.image) {
-        self.imageView.image = self.imageList.firstObject;
-        [self.imageList removeObjectAtIndex:0];
+    if (!self.currentImage) {
+        [self configureSwipableViewWithImage:image];
+        [self.imageList removeObject:image];
     }
 }
 
@@ -63,4 +64,39 @@
     
 }
 
+- (void)view:(MDCSwipeToChooseView *)view wasChosenWithDirection:(MDCSwipeDirection)direction {
+    if (self.imageList.count != 0) {
+        [self.imageList removeObject: view.imageView.image];
+
+        [self configureSwipableViewWithImage:self.imageList.firstObject];
+    }
+
+    if (direction == MDCSwipeDirectionLeft) {
+        NSLog(@"Gato meno!");
+    } else {
+        NSLog(@"Gato mao!");
+    }
+}
+
+- (void)configureSwipableViewWithImage:(UIImage *)image
+{
+    MDCSwipeToChooseViewOptions *options = [MDCSwipeToChooseViewOptions new];
+    options.likedText = @"Evil";
+    options.likedColor = [UIColor redColor];
+    options.nopeText = @"Cute";
+    options.nopeColor = [UIColor whiteColor];
+    options.delegate = self;
+    
+    options.onPan = ^(MDCPanState *state){
+        if (state.thresholdRatio == 1.f && state.direction == MDCSwipeDirectionLeft) {
+            NSLog(@"Let go now to delete the photo!");
+        }
+    };
+    
+    MDCSwipeToChooseView *view = [[MDCSwipeToChooseView alloc] initWithFrame:self.containerSwipableView.bounds
+                                                                     options:options];
+    self.currentImage = self.imageList.firstObject;
+    view.imageView.image = self.currentImage;
+    [self.containerSwipableView addSubview:view];
+}
 @end

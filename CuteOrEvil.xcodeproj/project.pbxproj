@@ -155,6 +155,7 @@
 				TargetAttributes = {
 					97E7BEFE1CDCC6B800C6E065 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = HC8LG89AQC;
 					};
 				};
 			};
@@ -357,6 +358,7 @@
 			baseConfigurationReference = F459ADCF30BC265C18D21619 /* Pods-CuteOrEvil.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CuteOrEvil/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bmc.CuteOrEvil;
@@ -369,6 +371,7 @@
 			baseConfigurationReference = 3314C134C7B5FCFD88C5EB30 /* Pods-CuteOrEvil.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CuteOrEvil/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bmc.CuteOrEvil;
