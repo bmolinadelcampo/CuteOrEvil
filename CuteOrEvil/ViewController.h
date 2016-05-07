@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CatAPIController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <ImageFeedDelegate>
 
+- (void)didReceiveImage:(UIImage *)image;
 
 @end
 
