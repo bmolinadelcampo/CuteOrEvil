@@ -31,12 +31,13 @@
         [self.imageURLsList removeAllObjects];
     }
     
-    NSString *numberOfImages = @"10";
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://thecatapi.com/api/images/get?format=xml&type=jpg,png&results_per_page=%@", numberOfImages]];
+    
+    self.numberOfCats = 7;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://thecatapi.com/api/images/get?format=xml&type=jpg,png&results_per_page=%d", self.numberOfCats]];
     
     self.session = [NSURLSession sharedSession];
     NSURLSessionDataTask *downloadDataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
+
         NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
         [parser setDelegate: self];
         [parser parse];
@@ -75,7 +76,8 @@
 #pragma mark - Private Methods
 - (void)downloadImages
 {
-    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+
     for (int i = 0; i < self.imageURLsList.count; i++) {
         
         if (self.session) {
@@ -94,9 +96,12 @@
                         }
                         
                     });
+                    if (i == self.imageURLsList.count - 1) {
+                        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                    }
                 }
             }];
-            
+
             [downloadImageTask resume];
         }
     }

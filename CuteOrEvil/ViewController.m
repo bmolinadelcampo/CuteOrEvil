@@ -16,8 +16,9 @@
 @property (strong, nonatomic) CatAPIController *apiController;
 @property (strong, readwrite) NSMutableArray *imageList;
 @property (strong, nonatomic) UIImage *currentImage;
-@property (strong, nonatomic) NSNumber *cuteCount;
-@property (strong, nonatomic) NSNumber *evilCount;
+
+@property int cuteCount;
+@property int evilCount;
 
 @end
 
@@ -29,21 +30,15 @@
     self.apiController = [CatAPIController new];
     self.apiController.delegate = self;
     
-//    [self styleImageView:self.swipableView.imageView];
     [self.apiController getCatImages];
+    
+    self.cuteCount = 0;
+    self.evilCount = 0;
 }
-
-
-//- (void)showNextPicture:(id)sender {
-//    
-//    if (self.imageList.count != 0) {
-//        self.swipableView.imageView.image = self.imageList.firstObject;
-//        [self.imageList removeObjectAtIndex:0];
-//    }
-//}
 
 - (void)didReceiveImage:(UIImage *)image
 {
+
     if (!self.imageList) {
         self.imageList = [NSMutableArray new];
     }
@@ -72,9 +67,15 @@
     }
 
     if (direction == MDCSwipeDirectionLeft) {
-        NSLog(@"Gato meno!");
+        self.cuteCount++;
+        NSLog(@"%d gatos menos!", self.cuteCount);
     } else {
-        NSLog(@"Gato mao!");
+        self.evilCount++;
+        NSLog(@"%d gatos maos!", self.evilCount);
+    }
+    
+    if ((self.cuteCount + self.evilCount) == self.apiController.numberOfCats) {
+        [self performSegueWithIdentifier:@"showResult" sender:self];
     }
 }
 
@@ -99,4 +100,24 @@
     view.imageView.image = self.currentImage;
     [self.containerSwipableView addSubview:view];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showResult"]) {
+        ResultViewController *resultViewController = segue.destinationViewController;
+        if (self.evilCount > self.cuteCount) {
+            resultViewController.resultString = @"EVIL";
+        }
+        else {
+            resultViewController.resultString = @"CUTE";
+        }
+
+    }
+    
+    self.cuteCount = 0;
+    self.evilCount = 0;
+    self.currentImage = nil;
+    [self.apiController getCatImages];
+}
+
 @end

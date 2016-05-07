@@ -16,7 +16,9 @@
 @end
 
 @interface CatAPIController : NSObject <NSXMLParserDelegate>
+
 @property (weak, nonatomic) id <ImageFeedDelegate> delegate;
+@property int numberOfCats;
 
 - (void)getCatImages;
 

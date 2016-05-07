@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CatAPIController.h"
 #import <MDCSwipeToChoose/MDCSwipeToChoose.h>
+
+#import "CatAPIController.h"
 #import "MDCSwipeToChooseView.h"
+#import "ResultViewController.h"
 
 
 @interface ViewController : UIViewController <ImageFeedDelegate, MDCSwipeToChooseDelegate>
