@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85033590407F7CE41071F932 /* libPods-CuteOrEvil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9F250A80E69304433F2E5D /* libPods-CuteOrEvil.a */; };
 		97E7BF041CDCC6B800C6E065 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E7BF031CDCC6B800C6E065 /* main.m */; };
 		97E7BF071CDCC6B900C6E065 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E7BF061CDCC6B900C6E065 /* AppDelegate.m */; };
 		97E7BF0A1CDCC6B900C6E065 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E7BF091CDCC6B900C6E065 /* ViewController.m */; };
@@ -14,9 +15,11 @@
 		97E7BF0F1CDCC6B900C6E065 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97E7BF0E1CDCC6B900C6E065 /* Assets.xcassets */; };
 		97E7BF121CDCC6B900C6E065 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E7BF101CDCC6B900C6E065 /* LaunchScreen.storyboard */; };
 		97E7BF441CDD2D5400C6E065 /* CatAPIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E7BF431CDD2D5400C6E065 /* CatAPIController.m */; };
+		97E7BF651CDE16A000C6E065 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E7BF641CDE16A000C6E065 /* ResultViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3314C134C7B5FCFD88C5EB30 /* Pods-CuteOrEvil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuteOrEvil.release.xcconfig"; path = "Pods/Target Support Files/Pods-CuteOrEvil/Pods-CuteOrEvil.release.xcconfig"; sourceTree = "<group>"; };
 		97E7BEFF1CDCC6B800C6E065 /* CuteOrEvil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuteOrEvil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E7BF031CDCC6B800C6E065 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		97E7BF051CDCC6B900C6E065 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -29,6 +32,10 @@
 		97E7BF131CDCC6B900C6E065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97E7BF421CDD2D5400C6E065 /* CatAPIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatAPIController.h; sourceTree = "<group>"; };
 		97E7BF431CDD2D5400C6E065 /* CatAPIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatAPIController.m; sourceTree = "<group>"; };
+		97E7BF631CDE16A000C6E065 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
+		97E7BF641CDE16A000C6E065 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
+		F459ADCF30BC265C18D21619 /* Pods-CuteOrEvil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuteOrEvil.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CuteOrEvil/Pods-CuteOrEvil.debug.xcconfig"; sourceTree = "<group>"; };
+		FB9F250A80E69304433F2E5D /* libPods-CuteOrEvil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CuteOrEvil.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,17 +43,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85033590407F7CE41071F932 /* libPods-CuteOrEvil.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90ADD35E2717B559A48F0CFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB9F250A80E69304433F2E5D /* libPods-CuteOrEvil.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		97E7BEF61CDCC6B800C6E065 = {
 			isa = PBXGroup;
 			children = (
 				97E7BF011CDCC6B800C6E065 /* CuteOrEvil */,
 				97E7BF001CDCC6B800C6E065 /* Products */,
+				9F561F3165E6C329CD2F8339 /* Pods */,
+				90ADD35E2717B559A48F0CFC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +81,7 @@
 			children = (
 				97E7BF051CDCC6B900C6E065 /* AppDelegate.h */,
 				97E7BF061CDCC6B900C6E065 /* AppDelegate.m */,
-				97E7BF081CDCC6B900C6E065 /* ViewController.h */,
-				97E7BF091CDCC6B900C6E065 /* ViewController.m */,
+				97E7BF661CDE16AE00C6E065 /* View Controllers */,
 				97E7BF421CDD2D5400C6E065 /* CatAPIController.h */,
 				97E7BF431CDD2D5400C6E065 /* CatAPIController.m */,
 				97E7BF0B1CDCC6B900C6E065 /* Main.storyboard */,
@@ -84,6 +101,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		97E7BF661CDE16AE00C6E065 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				97E7BF081CDCC6B900C6E065 /* ViewController.h */,
+				97E7BF091CDCC6B900C6E065 /* ViewController.m */,
+				97E7BF631CDE16A000C6E065 /* ResultViewController.h */,
+				97E7BF641CDE16A000C6E065 /* ResultViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		9F561F3165E6C329CD2F8339 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F459ADCF30BC265C18D21619 /* Pods-CuteOrEvil.debug.xcconfig */,
+				3314C134C7B5FCFD88C5EB30 /* Pods-CuteOrEvil.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,9 +128,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97E7BF161CDCC6B900C6E065 /* Build configuration list for PBXNativeTarget "CuteOrEvil" */;
 			buildPhases = (
+				0C2AF59F114894DD2A19D507 /* 📦 Check Pods Manifest.lock */,
 				97E7BEFB1CDCC6B800C6E065 /* Sources */,
 				97E7BEFC1CDCC6B800C6E065 /* Frameworks */,
 				97E7BEFD1CDCC6B800C6E065 /* Resources */,
+				0759B33D042E3A77D225092D /* 📦 Embed Pods Frameworks */,
+				C9F0684E0400CA1A2AA66E51 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,6 +189,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0759B33D042E3A77D225092D /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CuteOrEvil/Pods-CuteOrEvil-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0C2AF59F114894DD2A19D507 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C9F0684E0400CA1A2AA66E51 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CuteOrEvil/Pods-CuteOrEvil-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		97E7BEFB1CDCC6B800C6E065 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -157,6 +245,7 @@
 				97E7BF0A1CDCC6B900C6E065 /* ViewController.m in Sources */,
 				97E7BF071CDCC6B900C6E065 /* AppDelegate.m in Sources */,
 				97E7BF041CDCC6B800C6E065 /* main.m in Sources */,
+				97E7BF651CDE16A000C6E065 /* ResultViewController.m in Sources */,
 				97E7BF441CDD2D5400C6E065 /* CatAPIController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +354,7 @@
 		};
 		97E7BF171CDCC6B900C6E065 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F459ADCF30BC265C18D21619 /* Pods-CuteOrEvil.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CuteOrEvil/Info.plist;
@@ -276,6 +366,7 @@
 		};
 		97E7BF181CDCC6B900C6E065 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3314C134C7B5FCFD88C5EB30 /* Pods-CuteOrEvil.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CuteOrEvil/Info.plist;
@@ -304,6 +395,7 @@
 				97E7BF181CDCC6B900C6E065 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
