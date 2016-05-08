@@ -7,7 +7,7 @@ There are two types of persons in the world:
 
 After having this discussion infinite times I came up with the idea of creating an app that provides irrefutable proof about what the true nature of cats is. 
 
-# How it works
+## How it works
 
 The app shows 9 images of random cats in random situations. 
 
