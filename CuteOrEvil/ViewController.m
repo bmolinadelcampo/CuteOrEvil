@@ -68,10 +68,8 @@
 
     if (direction == MDCSwipeDirectionLeft) {
         self.cuteCount++;
-        NSLog(@"%d gatos menos!", self.cuteCount);
     } else {
         self.evilCount++;
-        NSLog(@"%d gatos maos!", self.evilCount);
     }
     
     if ((self.cuteCount + self.evilCount) == self.apiController.numberOfCats) {

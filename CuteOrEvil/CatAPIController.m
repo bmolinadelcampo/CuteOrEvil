@@ -32,7 +32,7 @@
     }
     
     
-    self.numberOfCats = 7;
+    self.numberOfCats = 9;
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://thecatapi.com/api/images/get?format=xml&type=jpg,png&results_per_page=%d", self.numberOfCats]];
     
     self.session = [NSURLSession sharedSession];
