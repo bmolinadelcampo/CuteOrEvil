@@ -96,8 +96,10 @@
     
     MDCSwipeToChooseView *view = [[MDCSwipeToChooseView alloc] initWithFrame:self.containerSwipableView.bounds
                                                                      options:options];
+    view.layer.borderWidth = 0;
     self.currentImage = self.imageList.firstObject;
     view.imageView.image = self.currentImage;
+    view.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.containerSwipableView addSubview:view];
 }
 

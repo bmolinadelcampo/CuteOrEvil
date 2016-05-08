@@ -11,6 +11,7 @@
 @interface ResultViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
+@property (weak, nonatomic) IBOutlet UILabel *catsAreLabel;
 - (IBAction)tryAgain:(id)sender;
 
 @end
@@ -20,12 +21,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.resultLabel.text = self.resultString;
+    
+    UIImage *backgroundImage;
+
+
     if ([self.resultString isEqualToString:@"EVIL"]) {
-        self.view.backgroundColor = [UIColor redColor];
+        backgroundImage = [UIImage imageNamed:@"Evil"];
+        self.resultLabel.textColor = [UIColor whiteColor];
+        self.catsAreLabel.textColor = [UIColor whiteColor];
     }else
     {
-        self.view.backgroundColor = [UIColor colorWithRed:1.00 green:0.80 blue:0.96 alpha:1.00];
+        backgroundImage = [UIImage imageNamed:@"Cute"];
     }
+    
+    UIImageView *backgroundImageView =[[UIImageView alloc]initWithFrame:self.view.frame];
+    backgroundImageView.image=backgroundImage;
+    [self.view insertSubview:backgroundImageView atIndex:0];
 }
 
 - (IBAction)tryAgain:(id)sender {
