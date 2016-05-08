@@ -6,7 +6,7 @@
 There are two types of people in the world: 
 
 1. Those who think that cats are the cutest living creatures in the universe. 
-2. Those who think that cats more are evil than Satan himself.
+2. Those who think that cats are more evil than Satan himself.
 
 After having this discussion infinite times I came up with the idea of creating an app that provides irrefutable proof about what the true nature of cats is. 
 
